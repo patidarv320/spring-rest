@@ -48,7 +48,7 @@ public class HelloWorldControllerTest{
 		Mockito.when(helloService.sayHello()).thenReturn("Hello World!");
 		String expected = "Hello World!";
 		System.out.println(expected);
-		RequestBuilder requestBuilder = MockMvcRequestBuilders.get("/hello").accept(MediaType.TEXT_PLAIN);
+		RequestBuilder requestBuilder = MockMvcRequestBuilders.get("/api/v1/hello").accept(MediaType.TEXT_PLAIN);
 		MvcResult result = mockMvc.perform(requestBuilder).andReturn();
 		System.out.println(result.getResponse().getContentAsString());
 		junit.framework.Assert.assertEquals(result.getResponse().getContentAsString(),expected);

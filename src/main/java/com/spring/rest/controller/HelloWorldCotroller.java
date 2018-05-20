@@ -12,7 +12,7 @@ public class HelloWorldCotroller {
 	@Autowired
 	private HelloService helloService;
 	
-	@GetMapping(value="/hello")
+	@GetMapping(value="/api/v1/hello")
 	public String sayHello(){
 		return helloService.sayHello();
 	}

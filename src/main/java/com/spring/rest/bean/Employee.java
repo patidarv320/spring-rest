@@ -1,15 +1,29 @@
 package com.spring.rest.bean;
 
+import javax.validation.constraints.NotNull;
+
+import org.hibernate.validator.constraints.Email;
+import org.hibernate.validator.constraints.NotBlank;
+
 public class Employee {
+
 
 	private long id;
 	
+	@NotNull(message="First name of employee shouldn't be null or blank")
+	@NotBlank(message="First name of employee shouldn't be null or blank")
 	private String fName;
 	
+	@NotNull(message="Last name of employee shouldn't be null or blank")
+	@NotBlank(message="Last name of employee shouldn't be null or blank")
 	private String lName;
 	
+	@NotNull(message="DOB of employee shouldn't be null or blank")
 	private String dob;
 	
+	@NotNull
+	@NotBlank
+	@Email(message="it's not a email address.")
 	private String email;
 
 	public long getId() {
@@ -70,8 +84,4 @@ public class Employee {
 		return "Employee [id=" + id + ", fName=" + fName + ", lName=" + lName + ", dob=" + dob + ", email=" + email
 				+ "]";
 	}
-	
-	
-	
-	
 }
